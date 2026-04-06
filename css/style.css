@@ -1,0 +1,641 @@
+/* 
+ * 应象堂中医养生馆 - 样式文件
+ * 配色方案：
+ * - 主色（赭石色）：#9D654C - 用于导航栏、标题、重点按钮
+ * - 辅助色（浅墨绿）：#7D8C7A - 用于板块边框、图标、链接
+ * - 底色（米白色）：#F5F2EB - 页面整体底色
+ */
+
+/* ==================== 基础重置与通用样式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Serif SC", "STKaiti", "KaiTi", "SimSun", "PingFang SC";
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    background-color: #F5F2EB;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== 导航栏样式 ==================== */
+.navbar {
+    background-color: #9D654C;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* 移动端菜单按钮 */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* 菜单展开状态 */
+.nav-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* ==================== 主要内容区域 ==================== */
+main {
+    padding-top: 60px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #9D654C;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #9D654C, #7D8C7A);
+    border-radius: 2px;
+}
+
+/* ==================== 企业简介板块 ==================== */
+.about-section {
+    background: linear-gradient(135deg, #F5F2EB 0%, #EDE8DD 100%);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+/* ==================== 视频板块 ==================== */
+.video-section {
+    background-color: #fff;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-tip {
+    text-align: center;
+    color: #7D8C7A;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+/* ==================== 团队介绍板块 ==================== */
+.team-section {
+    background-color: #F5F2EB;
+}
+
+.team-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #666;
+    font-size: 1.05rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.team-member {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(157, 101, 76, 0.1);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #9D654C;
+}
+
+.member-name {
+    font-size: 1.3rem;
+    color: #9D654C;
+    margin-bottom: 5px;
+}
+
+.member-title {
+    font-size: 0.95rem;
+    color: #7D8C7A;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.member-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.team-more {
+    text-align: center;
+}
+
+/* ==================== 联系我们板块 ==================== */
+.contact-section {
+    background-color: #EDE8DD;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9D654C;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.contact-detail h4 {
+    color: #9D654C;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-detail p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ==================== 博客板块 ==================== */
+.blog-section {
+    background-color: #fff;
+}
+
+.blog-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #666;
+}
+
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: #F5F2EB;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid #9D654C;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-date {
+    color: #7D8C7A;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.blog-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.blog-title a {
+    color: #9D654C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-title a:hover {
+    color: #7D8C7A;
+}
+
+.blog-excerpt {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.blog-readmore {
+    color: #7D8C7A;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.blog-readmore:hover {
+    color: #9D654C;
+}
+
+/* ==================== 按钮样式 ==================== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #9D654C;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #7D8C7A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(157, 101, 76, 0.3);
+}
+
+/* ==================== 页脚样式 ==================== */
+.footer {
+    background-color: #9D654C;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==================== 博客文章页面样式 ==================== */
+.article-section {
+    background-color: #fff;
+    min-height: calc(100vh - 60px - 100px);
+}
+
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.article-header {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #F5F2EB;
+}
+
+.back-link {
+    display: inline-block;
+    color: #7D8C7A;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    color: #9D654C;
+}
+
+.article-title {
+    font-size: 2rem;
+    color: #9D654C;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.article-date {
+    color: #7D8C7A;
+    font-size: 0.95rem;
+}
+
+.article-content {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.article-content h2 {
+    color: #9D654C;
+    font-size: 1.5rem;
+    margin: 30px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EDE8DD;
+}
+
+.article-content h3 {
+    color: #7D8C7A;
+    font-size: 1.2rem;
+    margin: 25px 0 10px;
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+.article-content li {
+    margin-bottom: 8px;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    /* 导航栏移动端适配 */
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: #9D654C;
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        gap: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 15px 0;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    /* 内容区域适配 */
+    .section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    /* 团队网格适配 */
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* 联系区域适配 */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* 博客列表适配 */
+    .blog-list {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 文章页面适配 */
+    .article-title {
+        font-size: 1.5rem;
+    }
+    
+    .article-content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .about-text {
+        font-size: 1rem;
+    }
+    
+    .team-member {
+        padding: 20px;
+    }
+    
+    .blog-card {
+        padding: 20px;
+    }
+}
