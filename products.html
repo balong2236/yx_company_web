@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品和服务 - 应象堂中医养生馆</title>
+    <meta name="description" content="应象堂中医养生馆产品和服务介绍，包括艾灸调理、古法推拿、体质辨证等中医养生服务">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 产品和服务页面样式 */
+        .products-section {
+            padding: 80px 0 60px;
+            background-color: #fff;
+        }
+        
+        .products-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .product-card {
+            background-color: #F5F2EB;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #9D654C, #7D8C7A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .product-icon {
+            font-size: 4rem;
+            color: #fff;
+            opacity: 0.9;
+        }
+        
+        .product-content {
+            padding: 30px;
+        }
+        
+        .product-title {
+            color: #9D654C;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-subtitle {
+            color: #7D8C7A;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        
+        .product-desc {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .product-features {
+            margin-bottom: 25px;
+        }
+        
+        .product-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .product-feature::before {
+            content: "✓";
+            color: #7D8C7A;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #9D654C;
+            margin-bottom: 20px;
+        }
+        
+        .product-btn {
+            display: inline-block;
+            background-color: #9D654C;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .product-btn:hover {
+            background-color: #7D8C7A;
+            transform: translateY(-2px);
+        }
+        
+        /* 服务流程 */
+        .process-section {
+            padding: 60px 0;
+            background-color: #F5F2EB;
+            margin-top: 60px;
+        }
+        
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-number {
+            width: 50px;
+            height: 50px;
+            background-color: #9D654C;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .process-title {
+            color: #9D654C;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .process-desc {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* 常见问题 */
+        .faq-section {
+            padding: 60px 0;
+            background-color: #fff;
+            margin-top: 40px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #EDE8DD;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #F5F2EB;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #EDE8DD;
+        }
+        
+        .faq-question h3 {
+            color: #9D654C;
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 200px;
+        }
+        
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">应象堂</a>
+            
+            <button class="nav-toggle" aria-label="切换导航菜单">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="products.html" class="nav-link active">产品和服务</a></li>
+                <li><a href="contact.html" class="nav-link">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <section class="products-section">
+            <div class="products-container">
+                <h1 class="section-title">产品与服务</h1>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 20px; color: #666;">
+                    应象堂秉承传统中医养生理念，结合现代健康需求，为您提供全方位的中医养生服务与优质草本产品。
+                </p>
+                
+                <div class="product-grid">
+                    <!-- 服务1：艾灸调理 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">🔥</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">艾灸调理</h3>
+                            <p class="product-subtitle">温通经络 · 驱寒除湿</p>
+                            <p class="product-desc">
+                                采用陈年艾草，结合传统灸法与现代技术，针对寒湿体质、女性养生、关节不适等问题，温通经络，调理气血。
+                            </p>
+                            <div class="product-features">
+                                <div class="product-feature">采用三年陈艾，品质保证</div>
+                                <div class="product-feature">专业医师操作，安全有效</div>
+                                <div class="product-feature">个性化调理方案</div>
+                                <div class="product-feature">舒适环境，贴心服务</div>
+                            </div>
+                            <div class="product-price">¥298/次</div>
+                            <a href="contact.html" class="product-btn">立即预约</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务2：古法推拿 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">💆</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">古法推拿</h3>
+                            <p class="product-subtitle">疏通经络 · 调和气血</p>
+                            <p class="product-desc">
+                                传承家传推拿技艺，针对肩颈腰腿不适、亚健康状态，通过专业手法疏通经络，缓解疲劳，恢复身体活力。
+                            </p>
+                            <div class="product-features">
+                                <div class="product-feature">传统推拿手法</div>
+                                <div class="product-feature">针对性调理</div>
+                                <div class="product-feature">缓解各种不适</div>
+                                <div class="product-feature">改善睡眠质量</div>
+                            </div>
+                            <div class="product-price">¥198/次</div>
+                            <a href="contact.html" class="product-btn">立即预约</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务3：体质辨证 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">🔍</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">体质辨证</h3>
+                            <p class="product-subtitle">因人而异 · 精准调理</p>
+                            <p class="product-desc">
+                                通过中医四诊合参，辨识您的体质类型，制定个性化养生方案，从饮食、作息、运动等多方面综合调理。
+                            </p>
+                            <div class="product-features">
+                                <div class="product-feature">专业中医辨证</div>
+                                <div class="product-feature">个性化养生方案</div>
+                                <div class="product-feature">详细体质报告</div>
+                                <div class="product-feature">长期健康指导</div>
+                            </div>
+                            <div class="product-price">¥398/次</div>
+                            <a href="contact.html" class="product-btn">立即预约</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 服务4：食疗指导 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">🍵</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">食疗指导</h3>
+                            <p class="product-subtitle">药食同源 · 日常养生</p>
+                            <p class="product-desc">
+                                根据您的体质特点，定制专属食疗方案，推荐适合的食材与食谱，让养生融入日常饮食，吃出健康好身体。
+                            </p>
+                            <div class="product-features">
+                                <div class="product-feature">个性化食谱</div>
+                                <div class="product-feature">药食同源配方</div>
+                                <div class="product-feature">四季养生指导</div>
+                                <div class="product-feature">食材选购建议</div>
+                            </div>
+                            <div class="product-price">¥268/次</div>
+                            <a href="contact.html" class="product-btn">立即预约</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品1：养生茶 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">🌿</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">草本养生茶</h3>
+                            <p class="product-subtitle">纯天然 · 无添加</p>
+                            <p class="product-desc">
+                                精选优质中药材，根据不同体质精心调配，口感温和，功效显著，适合日常饮用，调理身体。
+                            </p>
+                            <div class="product-features">
+                                <div class="product-feature">纯天然原料</div>
+                                <div class="product-feature">无添加防腐剂</div>
+                                <div class="product-feature">多种配方可选</div>
+                                <div class="product-feature">独立包装，方便携带</div>
+                            </div>
+                            <div class="product-price">¥168/盒</div>
+                            <a href="contact.html" class="product-btn">了解详情</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 产品2：艾灸套装 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">🔥</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">家庭艾灸套装</h3>
+                            <p class="product-subtitle">方便易用 · 安全可靠</p>
+                            <p class="product-desc">
+                                包含优质艾条、艾灸盒、穴位图等配件，适合在家自行艾灸，操作简单，安全可靠。
+                            </p>
+                            <div class="product-features">
+                                <div class="product-feature">优质陈艾条</div>
+                                <div class="product-feature">便携式艾灸盒</div>
+                                <div class="product-feature">详细使用说明</div>
+                                <div class="product-feature">安全防护措施</div>
+                            </div>
+                            <div class="product-price">¥298/套</div>
+                            <a href="contact.html" class="product-btn">了解详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 服务流程 -->
+        <section class="process-section">
+            <div class="process-container">
+                <h2 class="section-title">服务流程</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">预约咨询</h3>
+                        <p class="process-desc">电话或微信预约，了解服务详情</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">体质评估</h3>
+                        <p class="process-desc">专业医师进行体质辨证</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">方案定制</h3>
+                        <p class="process-desc">根据体质制定个性化调理方案</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">服务体验</h3>
+                        <p class="process-desc">专业服务，舒适体验</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <h3 class="process-title">后续指导</h3>
+                        <p class="process-desc">提供日常养生建议和后续服务</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 常见问题 -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>艾灸有哪些注意事项？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>艾灸时应注意：1. 空腹或过饱时不宜艾灸；2. 孕妇、高血压患者、糖尿病患者应在医师指导下进行；3. 艾灸后注意保暖，避免受凉；4. 艾灸后2小时内不宜洗澡；5. 艾灸过程中如感到不适，应立即停止。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>推拿适合哪些人群？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>推拿适合：1. 肩颈腰腿疼痛人群；2. 亚健康状态人群；3. 疲劳乏力人群；4. 睡眠质量差人群；5. 消化功能紊乱人群。但骨折、关节脱位、急性外伤、严重骨质疏松等患者应避免推拿。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>体质辨证需要多长时间？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>体质辨证通常需要30-45分钟，医师会通过望、闻、问、切四诊合参，详细了解您的身体状况、生活习惯、饮食偏好等，然后给出体质判断和调理建议。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何选择适合自己的养生茶？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>选择养生茶应根据个人体质：1. 气虚体质：可选择黄芪、党参等补气茶；2. 阳虚体质：可选择生姜、肉桂等温阳茶；3. 阴虚体质：可选择枸杞、麦冬等滋阴茶；4. 痰湿体质：可选择陈皮、茯苓等祛湿茶；5. 血瘀体质：可选择玫瑰花、红花等活血茶。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部版权信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>应象堂中医养生馆</h3>
+                    <p>传承千年中医智慧，结合现代生活方式，为您提供专业的中医养生服务。</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="products.html">产品和服务</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <div class="footer-contact-item">
+                        <span>广东省珠海市香洲区香工路金地动力港A2区26栋502</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>(+86)13427596883</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>balong-007@qq.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>周一至周日 9:00-17:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 珠海应象传承文化有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" title="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <style>
+        /* 底部样式 */
+        .footer {
+            background-color: #333333;
+            padding: 60px 0 30px;
+            border-top: 1px solid #EDE8DD;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h3,
+        .footer-links h3,
+        .footer-contact h3 {
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            color: #FFFFFF;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #9D654C;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact-item span {
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #EDE8DD;
+        }
+        
+        .footer-bottom p {
+            color: #FFFFFF;
+            margin: 0;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #9D654C;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #7D8C7A;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        // 返回顶部按钮功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            // 滚动事件监听
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // 点击返回顶部
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- JavaScript文件 -->
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ手风琴效果
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('span');
+                
+                // 切换当前FAQ的状态
+                answer.classList.toggle('active');
+                
+                // 切换箭头图标
+                if (answer.classList.contains('active')) {
+                    icon.textContent = '▲';
+                } else {
+                    icon.textContent = '▼';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
