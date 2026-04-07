@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 - 应象堂中医养生馆</title>
+    <meta name="description" content="应象堂中医养生馆常见问题解答，包括艾灸注意事项、推拿适用人群、体质辨证等问题">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 常见问题页面样式 */
+        .faq-section {
+            padding: 80px 0 60px;
+            background-color: #fff;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #EDE8DD;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: #F5F2EB;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #EDE8DD;
+        }
+        
+        .faq-question h3 {
+            color: #9D654C;
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 200px;
+        }
+        
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">应象堂</a>
+            
+            <button class="nav-toggle" aria-label="切换导航菜单">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="products.html" class="nav-link">产品和服务</a></li>
+                <li><a href="faq.html" class="nav-link active">常见问题</a></li>
+                <li><a href="contact.html" class="nav-link">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <section class="faq-section">
+            <div class="faq-container">
+                <h1 class="section-title">常见问题</h1>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>艾灸有哪些注意事项？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>艾灸时应注意：1. 空腹或过饱时不宜艾灸；2. 孕妇、高血压患者、糖尿病患者应在医师指导下进行；3. 艾灸后注意保暖，避免受凉；4. 艾灸后2小时内不宜洗澡；5. 艾灸过程中如感到不适，应立即停止。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>推拿适合哪些人群？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>推拿适合：1. 肩颈腰腿疼痛人群；2. 亚健康状态人群；3. 疲劳乏力人群；4. 睡眠质量差人群；5. 消化功能紊乱人群。但骨折、关节脱位、急性外伤、严重骨质疏松等患者应避免推拿。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>体质辨证需要多长时间？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>体质辨证通常需要30-45分钟，医师会通过望、闻、问、切四诊合参，详细了解您的身体状况、生活习惯、饮食偏好等，然后给出体质判断和调理建议。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何选择适合自己的养生茶？</h3>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>选择养生茶应根据个人体质：1. 气虚体质：可选择黄芪、党参等补气茶；2. 阳虚体质：可选择生姜、肉桂等温阳茶；3. 阴虚体质：可选择枸杞、麦冬等滋阴茶；4. 痰湿体质：可选择陈皮、茯苓等祛湿茶；5. 血瘀体质：可选择玫瑰花、红花等活血茶。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部版权信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>应象堂中医养生馆</h3>
+                    <p>传承千年中医智慧，结合现代生活方式，为您提供专业的中医养生服务。</p>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="products.html">产品和服务</a></li>
+                        <li><a href="faq.html">常见问题</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <div class="footer-contact-item">
+                        <span>广东省珠海市香洲区香工路金地动力港A2区26栋502</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>(+86)13427596883</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>balong-007@qq.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>周一至周日 9:00-17:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 珠海应象传承文化有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="back-to-top" title="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <style>
+        /* 底部样式 */
+        .footer {
+            background-color: #333333;
+            padding: 60px 0 30px;
+            border-top: 1px solid #EDE8DD;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h3,
+        .footer-links h3,
+        .footer-contact h3 {
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            color: #FFFFFF;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #9D654C;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact-item span {
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #EDE8DD;
+        }
+        
+        .footer-bottom p {
+            color: #FFFFFF;
+            margin: 0;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #9D654C;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #7D8C7A;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        // 返回顶部按钮功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            // 滚动事件监听
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // 点击返回顶部
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    <!-- JavaScript文件 -->
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ手风琴效果
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('span');
+                
+                // 切换当前FAQ的状态
+                answer.classList.toggle('active');
+                
+                // 切换箭头图标
+                if (answer.classList.contains('active')) {
+                    icon.textContent = '▲';
+                } else {
+                    icon.textContent = '▼';
+                }
+            });
+        });
+    </script>

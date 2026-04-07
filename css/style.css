@@ -19,7 +19,7 @@ html {
 
 body {
     font-family: "Noto Serif SC", "STKaiti", "KaiTi", "SimSun", "PingFang SC";
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.7;
     color: #333;
     background-color: #F5F2EB;
@@ -297,6 +297,7 @@ main {
 /* ==================== 联系我们板块 ==================== */
 .contact-section {
     background-color: #EDE8DD;
+    padding-top: 100px;
 }
 
 .contact-content {
@@ -310,12 +311,23 @@ main {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+    color: #9D654C;
+    margin-bottom: 30px;
+    font-size: 1.75rem;
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    margin-bottom: 25px;
 }
 
 .contact-icon {
@@ -341,15 +353,100 @@ main {
     font-size: 1rem;
 }
 
+.contact-detail p.phone-number {
+    font-size: 1.5rem;
+    color: #9D654C;
+    font-weight: bold;
+}
+
+.contact-detail p.phone-desc,
+.contact-detail p.wechat-desc,
+.contact-detail p.email-desc,
+.contact-detail p.time-desc {
+    font-size: 1.125rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.contact-detail p.wechat-id {
+    font-size: 1.375rem;
+    color: #7D8C7A;
+}
+
 .map-container {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-.contact-more {
+.map-container h3 {
+    color: #9D654C;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.qrcode-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.qrcode-container h3 {
+    color: #9D654C;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.qrcode-container img {
+    width: 180px;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.qrcode-container p {
+    color: #666;
+    font-size: 1.125rem;
+}
+
+.appointment-prompt {
     margin-top: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #9D654C 0%, #7D8C7A 100%);
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.appointment-prompt h3 {
+    margin-bottom: 15px;
+    font-size: 1.625rem;
+}
+
+.appointment-prompt p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.appointment-prompt p.phone-number {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.welcome-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.welcome-text p {
+    font-size: 1.375rem;
+    color: #555;
+    line-height: 1.8;
 }
 
 /* ==================== 博客板块 ==================== */
@@ -548,6 +645,576 @@ main {
     margin: 20px 0;
 }
 
+/* ==================== 图片轮播样式 ==================== */
+.picture-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.carousel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.carousel-caption h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.3);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: rgba(157, 101, 76, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #9D654C;
+    transform: scale(1.2);
+}
+
+/* ==================== 博客板块样式 ==================== */
+.blog {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-8 {
+    margin-bottom: 40px;
+}
+
+.mt-8 {
+    margin-top: 40px;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.blog-post {
+    background-color: #F5F2EB;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.post-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover .post-image img {
+    transform: scale(1.05);
+}
+
+.post-content {
+    padding: 25px;
+}
+
+.post-meta {
+    margin-bottom: 15px;
+}
+
+.post-date {
+    color: #7D8C7A;
+    font-size: 0.9rem;
+}
+
+.post-title {
+    color: #9D654C;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.post-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    color: #7D8C7A;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #9D654C;
+}
+
+.btn-secondary {
+    background-color: #7D8C7A;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #9D654C;
+    transform: translateY(-2px);
+}
+
+/* ==================== 底部样式 ==================== */
+.footer {
+    background-color: #333333;
+    padding: 60px 0 30px;
+    border-top: 1px solid #EDE8DD;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #7D8C7A;
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #9D654C;
+    transform: translateY(-3px);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #9D654C;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.footer-contact-item i {
+    color: #9D654C;
+    margin-right: 15px;
+    font-size: 1.1rem;
+    margin-top: 2px;
+}
+
+.footer-contact-item span {
+    color: #FFFFFF;
+    line-height: 1.4;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #EDE8DD;
+}
+
+.footer-bottom p {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* ==================== 返回顶部按钮 ==================== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #9D654C;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #7D8C7A;
+    transform: translateY(-5px);
+}
+
+/* ==================== 产品页面样式 ==================== */
+/* 产品和服务页面样式 */
+.products-section {
+    padding: 80px 0 60px;
+    background-color: #fff;
+}
+
+.products-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 新产品介绍样式 */
+.new-product-section {
+    margin-top: 50px;
+}
+
+.product-item {
+    margin-bottom: 60px;
+    background-color: #F5F2EB;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-name {
+    color: #9D654C;
+    font-size: 1.875rem;
+    margin: 0;
+}
+
+.product-link {
+    display: inline-block;
+    background-color: #9D654C;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.product-link:hover {
+    background-color: #7D8C7A;
+    transform: translateY(-2px);
+}
+
+.product-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.product-image-placeholder {
+    height: 300px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.product-image-placeholder img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-details {
+    color: #666;
+    line-height: 1.6;
+}
+
+.product-intro {
+    font-size: 1.1875rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.product-features li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 1.125rem;
+}
+
+.product-features li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.product-specs {
+    margin-top: 20px;
+}
+
+.product-specs h3 {
+    color: #9D654C;
+    font-size: 1.25rem;
+    margin: 15px 0 10px 0;
+}
+
+.product-specs p {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+}
+
+.product-specs ol {
+    list-style: decimal;
+    padding-left: 30px;
+    margin: 0;
+}
+
+.product-specs ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.sub-products {
+    margin-top: 20px;
+}
+
+.sub-product {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.sub-product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sub-product-header h3 {
+    color: #9D654C;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.sub-product-content {
+    display: grid;
+    grid-template-columns: 285.06px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.sub-product-image {
+    width: 285.06px;
+    height: 300px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.sub-product-image img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.sub-product p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.combination-plans {
+    margin-top: 20px;
+}
+
+.plan {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.plan h3 {
+    color: #9D654C;
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+}
+
 /* ==================== 响应式设计 ==================== */
 @media (max-width: 768px) {
     /* 导航栏移动端适配 */
@@ -591,6 +1258,17 @@ main {
         font-size: 1.6rem;
     }
     
+    /* 轮播适配 */
+    .carousel-inner {
+        height: 300px;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
     /* 团队网格适配 */
     .team-grid {
         grid-template-columns: 1fr;
@@ -606,6 +1284,25 @@ main {
     /* 博客列表适配 */
     .blog-list {
         grid-template-columns: 1fr;
+    }
+    
+    /* 博客容器适配 */
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 页脚适配 */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* 返回顶部按钮适配 */
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
     }
     
     /* 文章页面适配 */
@@ -637,5 +1334,37 @@ main {
     
     .blog-card {
         padding: 20px;
+    }
+}
+
+/* 产品页面响应式设计 */
+@media (max-width: 768px) {
+    .sub-product-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .sub-product-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .product-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-image-placeholder {
+        height: 200px;
+    }
+    
+    .product-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .product-name {
+        font-size: 1.5rem;
     }
 }

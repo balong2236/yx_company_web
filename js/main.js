@@ -202,5 +202,172 @@ function initBackToTop() {
     });
 }
 
-// 如果需要返回顶部功能，取消下面这行的注释
-// document.addEventListener('DOMContentLoaded', initBackToTop);
+/**
+ * 图片轮播功能
+ * 实现自动轮播、手动切换、指示器等功能
+ */
+function initCarousel() {
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    
+    const items = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    
+    let currentIndex = 0;
+    let interval;
+    
+    // 显示指定幻灯片
+    function showSlide(index) {
+        // 隐藏所有幻灯片
+        items.forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // 隐藏所有指示器
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+        });
+        
+        // 显示当前幻灯片和指示器
+        items[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+    
+    // 下一张
+    function nextSlide() {
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= items.length) {
+            nextIndex = 0;
+        }
+        showSlide(nextIndex);
+    }
+    
+    // 上一张
+    function prevSlide() {
+        let prevIndex = currentIndex - 1;
+        if (prevIndex < 0) {
+            prevIndex = items.length - 1;
+        }
+        showSlide(prevIndex);
+    }
+    
+    // 自动轮播
+    function startAutoSlide() {
+        interval = setInterval(nextSlide, 3000);
+    }
+    
+    // 停止自动轮播
+    function stopAutoSlide() {
+        clearInterval(interval);
+    }
+    
+    // 事件监听
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+    }
+    
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            stopAutoSlide();
+            showSlide(index);
+            startAutoSlide();
+        });
+    });
+    
+    // 鼠标悬停时停止自动轮播
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+    
+    // 初始化
+    showSlide(0);
+    startAutoSlide();
+}
+
+/**
+ * 返回顶部按钮功能
+ * 页面滚动一定距离后显示返回顶部按钮
+ */
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (!backToTopBtn) return;
+    
+    // 滚动事件监听
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // 点击返回顶部
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/**
+ * FAQ手风琴效果
+ * 点击问题时展开/收起答案
+ */
+function initFAQAccordion() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    if (!faqQuestions.length) return;
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('span');
+            
+            // 切换当前FAQ的状态
+            answer.classList.toggle('active');
+            
+            // 切换箭头图标
+            if (answer.classList.contains('active')) {
+                icon.textContent = '▲';
+            } else {
+                icon.textContent = '▼';
+            }
+        });
+    });
+}
+
+// 初始化所有功能
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始化移动端导航菜单
+    initMobileNav();
+    
+    // 初始化平滑滚动
+    initSmoothScroll();
+    
+    // 初始化导航栏滚动效果
+    initNavbarScroll();
+    
+    // 初始化图片轮播
+    initCarousel();
+    
+    // 初始化返回顶部按钮
+    initBackToTop();
+    
+    // 初始化FAQ手风琴效果
+    initFAQAccordion();
+});
