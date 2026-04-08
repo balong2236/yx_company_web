@@ -3,17 +3,7 @@
  * 包含：移动端导航菜单切换、平滑滚动等
  */
 
-// 等待DOM加载完成
-document.addEventListener('DOMContentLoaded', function() {
-    // 初始化移动端导航菜单
-    initMobileNav();
-    
-    // 初始化平滑滚动
-    initSmoothScroll();
-    
-    // 初始化导航栏滚动效果
-    initNavbarScroll();
-});
+
 
 /**
  * 移动端导航菜单功能

@@ -317,6 +317,59 @@ main {
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
+.qrcode-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qrcode-section h3 {
+    color: #9D654C;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.qrcode-section img {
+    width: 180px;
+    height: 250px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.qrcode-section p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.contact-more {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact-more .btn-primary {
+    background-color: #9D654C;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-more .btn-primary:hover {
+    background-color: #7D8C7A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(157, 101, 76, 0.3);
+}
+
 .contact-info h2 {
     color: #9D654C;
     margin-bottom: 30px;
@@ -893,6 +946,7 @@ main {
     color: #FFFFFF;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-size: 1rem;
 }
 
 .social-links {
@@ -931,6 +985,7 @@ main {
     color: #FFFFFF;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 1rem;
 }
 
 .footer-links a:hover {
@@ -938,21 +993,14 @@ main {
 }
 
 .footer-contact-item {
-    display: flex;
-    align-items: flex-start;
     margin-bottom: 15px;
-}
-
-.footer-contact-item i {
-    color: #9D654C;
-    margin-right: 15px;
-    font-size: 1.1rem;
-    margin-top: 2px;
 }
 
 .footer-contact-item span {
     color: #FFFFFF;
     line-height: 1.4;
+    font-size: 1rem;
+    display: block;
 }
 
 .footer-bottom {
@@ -964,6 +1012,7 @@ main {
 .footer-bottom p {
     color: #FFFFFF;
     margin: 0;
+    font-size: 0.9rem;
 }
 
 /* ==================== 返回顶部按钮 ==================== */
@@ -1295,6 +1344,12 @@ main {
     .footer-container {
         grid-template-columns: 1fr;
         gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-contact-item {
+        display: inline-block;
+        text-align: center;
     }
     
     /* 返回顶部按钮适配 */
